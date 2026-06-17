@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-16T03:43:33.156Z",
+    "end": "2026-06-16T03:43:55.017Z",
+    "duration": 21861,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e3cf6e9e-3f04-4f68-8f5a-32734aabb86c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\actividad_cypress.cy.js",
+      "file": "cypress\\e2e\\actividad_cypress.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4f9e35d6-22f6-4cd0-98b4-2377590a386c",
+          "title": "Ejercicios sugeridos en example.cypress.io",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Ejercicio 1 - Visitar pagina principal y validar Kitchen Sink y boton Type",
+              "fullTitle": "Ejercicios sugeridos en example.cypress.io Ejercicio 1 - Visitar pagina principal y validar Kitchen Sink y boton Type",
+              "timedOut": null,
+              "duration": 3628,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io');\ncy.contains('Kitchen Sink').should('be.visible');\ncy.contains('type').should('exist');\ncy.screenshot('ejercicio-1-kitchen-sink');",
+              "err": {},
+              "uuid": "1b513038-e1e9-40fd-89af-f26f79996884",
+              "parentUUID": "4f9e35d6-22f6-4cd0-98b4-2377590a386c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ejercicio 2 - Ingresar a Type, escribir nombre y validar texto",
+              "fullTitle": "Ejercicios sugeridos en example.cypress.io Ejercicio 2 - Ingresar a Type, escribir nombre y validar texto",
+              "timedOut": null,
+              "duration": 4774,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io');\ncy.contains('type').click();\ncy.url().should('include', '/commands/actions');\ncy.get('#email1').clear().type('Laura').should('have.value', 'Laura');\ncy.screenshot('ejercicio-2-type-nombre');",
+              "err": {},
+              "uuid": "bd52edb6-16cf-4177-8d5b-8679ebcec63d",
+              "parentUUID": "4f9e35d6-22f6-4cd0-98b4-2377590a386c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ejercicio 3 - Ir a Checkboxes, seleccionar los disponibles y validar marcados",
+              "fullTitle": "Ejercicios sugeridos en example.cypress.io Ejercicio 3 - Ir a Checkboxes, seleccionar los disponibles y validar marcados",
+              "timedOut": null,
+              "duration": 3773,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/actions');\ncy.get('.action-checkboxes [type=\"checkbox\"]').not('[disabled]').check().should('be.checked');\ncy.get('.action-checkboxes [type=\"checkbox\"][disabled]').should('be.disabled');\ncy.screenshot('ejercicio-3-checkboxes');",
+              "err": {},
+              "uuid": "bb1a807b-67b9-48eb-9d81-141ee2f87289",
+              "parentUUID": "4f9e35d6-22f6-4cd0-98b4-2377590a386c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ejercicio 4 - Llenar formulario y enviarlo",
+              "fullTitle": "Ejercicios sugeridos en example.cypress.io Ejercicio 4 - Llenar formulario y enviarlo",
+              "timedOut": null,
+              "duration": 4481,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io/commands/actions');\ncy.get('#email1').clear().type('laura@test.com').should('have.value', 'laura@test.com');\ncy.get('#password1').clear().type('123456').should('have.value', '123456');\ncy.get('.action-form').submit();\ncy.screenshot('ejercicio-4-formulario');",
+              "err": {},
+              "uuid": "38f73cc3-e3c0-4007-ad03-58edc5b51f96",
+              "parentUUID": "4f9e35d6-22f6-4cd0-98b4-2377590a386c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ejercicio 5 - Login simulado, navegacion y cierre de sesion",
+              "fullTitle": "Ejercicios sugeridos en example.cypress.io Ejercicio 5 - Login simulado, navegacion y cierre de sesion",
+              "timedOut": null,
+              "duration": 1524,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io');\ncy.window().then(win => {\n  win.history.replaceState({}, '', '#/inicio');\n  win.document.body.innerHTML = `\n    <main>\n      <h1>Pagina inicial</h1>\n      <form id=\"login-form\">\n        <input id=\"usuario\" placeholder=\"Usuario\">\n        <input id=\"password\" type=\"password\" placeholder=\"Contrasena\">\n        <button type=\"submit\">Iniciar sesion</button>\n      </form>\n      <section id=\"dashboard\" style=\"display: none;\">\n        <h1>Bienvenida Laura</h1>\n        <button id=\"ir-perfil\">Ir al perfil</button>\n      </section>\n      <section id=\"perfil\" style=\"display: none;\">\n        <h1>Perfil de usuario</h1>\n        <button id=\"logout\">Cerrar sesion</button>\n      </section>\n    </main>\n  `;\n  const loginForm = win.document.querySelector('#login-form');\n  const dashboard = win.document.querySelector('#dashboard');\n  const perfil = win.document.querySelector('#perfil');\n  loginForm.addEventListener('submit', event => {\n    event.preventDefault();\n    loginForm.style.display = 'none';\n    dashboard.style.display = 'block';\n    perfil.style.display = 'none';\n    win.history.pushState({}, '', '#/dashboard');\n  });\n  win.document.querySelector('#ir-perfil').addEventListener('click', () => {\n    dashboard.style.display = 'none';\n    perfil.style.display = 'block';\n    win.history.pushState({}, '', '#/perfil');\n  });\n  win.document.querySelector('#logout').addEventListener('click', () => {\n    perfil.style.display = 'none';\n    dashboard.style.display = 'none';\n    loginForm.style.display = 'block';\n    win.history.pushState({}, '', '#/inicio');\n  });\n});\ncy.get('#usuario').type('Laura');\ncy.get('#password').type('123456');\ncy.contains('Iniciar sesion').click();\ncy.contains('Bienvenida Laura').should('be.visible');\ncy.url().should('include', '#/dashboard');\ncy.contains('Ir al perfil').click();\ncy.contains('Perfil de usuario').should('be.visible');\ncy.url().should('include', '#/perfil');\ncy.contains('Cerrar sesion').click();\ncy.contains('Pagina inicial').should('be.visible');\ncy.url().should('include', '#/inicio');\ncy.screenshot('ejercicio-5-login-simulado');",
+              "err": {},
+              "uuid": "b04a1cb3-8e7f-4ab2-a249-7df6ee383361",
+              "parentUUID": "4f9e35d6-22f6-4cd0-98b4-2377590a386c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b513038-e1e9-40fd-89af-f26f79996884",
+            "bd52edb6-16cf-4177-8d5b-8679ebcec63d",
+            "bb1a807b-67b9-48eb-9d81-141ee2f87289",
+            "38f73cc3-e3c0-4007-ad03-58edc5b51f96",
+            "b04a1cb3-8e7f-4ab2-a249-7df6ee383361"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18180,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

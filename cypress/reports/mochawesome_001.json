@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-16T03:43:58.589Z",
+    "end": "2026-06-16T03:44:16.889Z",
+    "duration": 18300,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "af0c8578-f7df-4c42-8d08-197bb1ee7f78",
+      "title": "",
+      "fullFile": "cypress\\e2e\\actividad_final_sima.cy.js",
+      "file": "cypress\\e2e\\actividad_final_sima.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "857c5df6-8a4b-4bd8-a1be-d764ddaffe46",
+          "title": "Actividad final del proyecto SIMA",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe iniciar sesion, registrar usuario, consultarlo y cerrar sesion",
+              "fullTitle": "Actividad final del proyecto SIMA Debe iniciar sesion, registrar usuario, consultarlo y cerrar sesion",
+              "timedOut": null,
+              "duration": 16104,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const documentoNuevo = `1020${Date.now().toString().slice(-6)}`;\nconst nombreNuevo = 'Prueba';\nconst apellidoNuevo = 'Cypress';\nconst correoNuevo = `prueba${documentoNuevo}@misena.edu.co`;\nconst celularNuevo = '3001234567';\ncy.visit('http://localhost:5173/login');\ncy.screenshot('sima-1-login');\ncy.contains('Iniciar sesion').should('be.visible');\ncy.get('input').eq(0).clear().type('1000000001');\ncy.get('input').eq(1).clear().type('Admin123');\ncy.contains('button', 'Iniciar sesion').click();\ncy.contains('Bienvenido coordinador').should('be.visible');\ncy.contains('Admin Sistema').should('be.visible');\ncy.contains('Coordinador').should('be.visible');\ncy.screenshot('sima-2-dashboard-coordinador');\ncy.contains('Gestion de usuarios').click();\ncy.url().should('include', '/usuarios');\ncy.contains('Gestion de usuarios').should('be.visible');\ncy.contains('Usuarios registrados').should('be.visible');\ncy.screenshot('sima-3-gestion-usuarios');\ncy.contains('button', 'Crear usuario').click();\ncy.contains('Crear usuario').should('be.visible');\ncy.get('input[placeholder=\"Ej. Maria\"]').type(nombreNuevo);\ncy.get('input[placeholder=\"Ej. Torres\"]').type(apellidoNuevo);\ncy.get('select').eq(0).select('Cedula de ciudadania');\ncy.get('input[placeholder=\"Numero de cedula\"]').type(documentoNuevo);\ncy.get('input[placeholder=\"usuario@misena.edu.co\"]').type(correoNuevo);\ncy.get('input[placeholder=\"Numero de celular\"]').type(celularNuevo);\ncy.get('select').eq(1).select('coordinador');\ncy.screenshot('sima-4-formulario-crear-usuario');\ncy.contains('button', 'Guardar usuario').click();\ncy.contains(nombreNuevo).should('be.visible');\ncy.contains(apellidoNuevo).should('be.visible');\ncy.contains('coordinador').should('be.visible');\ncy.screenshot('sima-5-usuario-registrado');\ncy.get('input[placeholder*=\"Buscar\"]').clear().type(nombreNuevo);\ncy.contains(nombreNuevo).should('be.visible');\ncy.contains(apellidoNuevo).should('be.visible');\ncy.screenshot('sima-6-consulta-usuario-registrado');\ncy.contains('Admin Sistema').click();\ncy.contains(/cerrar sesion|salir/i).click();\ncy.url().should('include', '/login');\ncy.contains('Iniciar sesion').should('be.visible');\ncy.screenshot('sima-7-cierre-sesion');",
+              "err": {},
+              "uuid": "58322788-3612-47ba-9e22-d7a07358eedc",
+              "parentUUID": "857c5df6-8a4b-4bd8-a1be-d764ddaffe46",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "58322788-3612-47ba-9e22-d7a07358eedc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16104,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
