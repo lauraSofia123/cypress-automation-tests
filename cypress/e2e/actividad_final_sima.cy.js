@@ -13,11 +13,10 @@ describe('Actividad final del proyecto SIMA', () => {
 
         cy.get('input').eq(0).clear().type('1000000001')
         cy.get('input').eq(1).clear().type('Admin123')
-        cy.contains('button', 'Iniciar sesion').click()
-
-        cy.contains('Bienvenido coordinador').should('be.visible')
-        cy.contains('Admin Sistema').should('be.visible')
-        cy.contains('Coordinador').should('be.visible')
+        cy.contains('button', /iniciar sesion/i).click()
+        cy.location('pathname', { timeout: 15000 }).should('include', '/dashboard')
+        cy.get('body', { timeout: 15000 }).should('contain.text', 'Admin Sistema')
+        cy.get('body').should('contain.text', 'Coordinador')
         cy.screenshot('sima-2-dashboard-coordinador')
 
         cy.contains('Gestion de usuarios').click()

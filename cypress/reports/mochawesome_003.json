@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-19T13:16:40.904Z",
-    "end": "2026-06-19T13:16:58.021Z",
-    "duration": 17117,
+    "start": "2026-06-19T13:48:25.799Z",
+    "end": "2026-06-19T13:48:49.230Z",
+    "duration": 23431,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ae2d7747-f9af-4e18-9c67-224033f4131f",
+      "uuid": "d75cf4e5-a9af-4923-bd49-7101119091d3",
       "title": "",
       "fullFile": "cypress\\e2e\\actividad_final_sima.cy.js",
       "file": "cypress\\e2e\\actividad_final_sima.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "81dba9f4-e4e2-40a6-a1f2-cf811d65b64e",
+          "uuid": "b0883944-8f62-42ad-b159-e5b1639f1c7d",
           "title": "Actividad final del proyecto SIMA",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Debe iniciar sesion, registrar usuario, consultarlo y cerrar sesion",
               "fullTitle": "Actividad final del proyecto SIMA Debe iniciar sesion, registrar usuario, consultarlo y cerrar sesion",
               "timedOut": null,
-              "duration": 14856,
+              "duration": 20085,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const documentoNuevo = `1020${Date.now().toString().slice(-6)}`;\nconst nombreNuevo = 'Prueba';\nconst apellidoNuevo = 'Cypress';\nconst correoNuevo = `prueba${documentoNuevo}@misena.edu.co`;\nconst celularNuevo = '3001234567';\ncy.visit('http://localhost:5173/login');\ncy.screenshot('sima-1-login');\ncy.contains('Iniciar sesion').should('be.visible');\ncy.get('input').eq(0).clear().type('1000000001');\ncy.get('input').eq(1).clear().type('Admin123');\ncy.contains('button', /iniciar sesion/i).click();\ncy.location('pathname', {\n  timeout: 15000\n}).should('include', '/dashboard');\ncy.get('body', {\n  timeout: 15000\n}).should('contain.text', 'Admin Sistema');\ncy.get('body').should('contain.text', 'Coordinador');\ncy.screenshot('sima-2-dashboard-coordinador');\ncy.contains('Gestion de usuarios').click();\ncy.url().should('include', '/usuarios');\ncy.contains('Gestion de usuarios').should('be.visible');\ncy.contains('Usuarios registrados').should('be.visible');\ncy.screenshot('sima-3-gestion-usuarios');\ncy.contains('button', 'Crear usuario').click();\ncy.contains('Crear usuario').should('be.visible');\ncy.get('input[placeholder=\"Ej. Maria\"]').type(nombreNuevo);\ncy.get('input[placeholder=\"Ej. Torres\"]').type(apellidoNuevo);\ncy.get('select').eq(0).select('Cedula de ciudadania');\ncy.get('input[placeholder=\"Numero de cedula\"]').type(documentoNuevo);\ncy.get('input[placeholder=\"usuario@misena.edu.co\"]').type(correoNuevo);\ncy.get('input[placeholder=\"Numero de celular\"]').type(celularNuevo);\ncy.get('select').eq(1).select('coordinador');\ncy.screenshot('sima-4-formulario-crear-usuario');\ncy.contains('button', 'Guardar usuario').click();\ncy.contains(nombreNuevo).should('be.visible');\ncy.contains(apellidoNuevo).should('be.visible');\ncy.contains('coordinador').should('be.visible');\ncy.screenshot('sima-5-usuario-registrado');\ncy.get('input[placeholder*=\"Buscar\"]').clear().type(nombreNuevo);\ncy.contains(nombreNuevo).should('be.visible');\ncy.contains(apellidoNuevo).should('be.visible');\ncy.screenshot('sima-6-consulta-usuario-registrado');\ncy.contains('Admin Sistema').click();\ncy.contains(/cerrar sesion|salir/i).click();\ncy.url().should('include', '/login');\ncy.contains('Iniciar sesion').should('be.visible');\ncy.screenshot('sima-7-cierre-sesion');",
               "err": {},
-              "uuid": "28af3da0-53db-4bda-a26e-9819497eae2a",
-              "parentUUID": "81dba9f4-e4e2-40a6-a1f2-cf811d65b64e",
+              "uuid": "3dee983d-95f7-4c91-9e31-4902045f971e",
+              "parentUUID": "b0883944-8f62-42ad-b159-e5b1639f1c7d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "28af3da0-53db-4bda-a26e-9819497eae2a"
+            "3dee983d-95f7-4c91-9e31-4902045f971e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 14856,
+          "duration": 20085,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
